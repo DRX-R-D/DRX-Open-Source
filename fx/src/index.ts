@@ -14,6 +14,7 @@ export { default as isPromise } from './isPromise.ts'
 export { default as join } from './join.ts'
 
 export { default as map } from './map.ts'
+export { default as mutation } from './mutation.ts'
 
 export { default as pass } from './pass.ts'
 export { default as pick } from './pick.ts'
