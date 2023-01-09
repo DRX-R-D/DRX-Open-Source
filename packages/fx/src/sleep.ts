@@ -4,7 +4,7 @@
  * @name sleep
  * */
 
-const sleep = (timer) => new Promise((resolve) => {
+const sleep = (timer: number) => new Promise((resolve) => {
   setTimeout(resolve, timer)
 })
 
