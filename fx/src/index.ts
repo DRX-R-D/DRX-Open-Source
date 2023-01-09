@@ -8,6 +8,8 @@ export { default as filter } from './filter.ts'
 export { default as flat } from './flat.ts'
 export { default as flow } from './flow.ts'
 
+export { default as head } from './head.ts'
+
 export { default as isArray } from './isArray.ts'
 export { default as isPromise } from './isPromise.ts'
 
