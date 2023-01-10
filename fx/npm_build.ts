@@ -1,4 +1,4 @@
-import { build, emptyDir } from '../../deps.ts'
+import { build, emptyDir } from '../deps.ts'
 
 await emptyDir('./npm')
 await build({
