@@ -6,15 +6,15 @@ import { flow, isPromise, toIterator, curry } from './index.ts'
  * @name reduce
  * */
 
-const reduce = curry((fn: any, arg: any, list: any[]): any => {
+const reduce = curry((fn: any, arg: any, list: any): any => {
   if (list === undefined) return reduce(fn, arg[0], arg.slice(1))
 
-  const iterList = toIterator(list)
+  list = toIterator(list)
+
   const recursive = (arg: any) => {
     let current: any
 
-    while (!current?.done) {
-      current = iterList.next()
+    while (!(current = list.next()).done) {
 
       const { value } = current
 
