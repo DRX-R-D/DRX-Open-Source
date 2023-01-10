@@ -7,7 +7,7 @@ import { curry, flow, take, toIterator } from './index.ts'
  * */
 
 const map = curry((fn, list) => {
-  const mapIterator = curry(function* (fn, list) {
+  const mapIterator: any = curry(function* (fn, list) {
     for (const item of toIterator(list)) yield flow(item, fn)
   })
 

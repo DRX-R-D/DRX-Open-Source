@@ -6,27 +6,26 @@ import { toIterator, isPromise } from './index.ts'
  * @name take
  * */
 
-const take = <T = any, V = any>(count: number, list: T) => {
+const take = <T = any, V = any>(count: number, list: T[]) => {
   if (count < 1) return []
 
-  const result = []
+  const result: any[] = []
 
-  list = toIterator(list)
-
+  const iterList = toIterator(list)
   const recursive = () => {
     let current
 
-    while (!(current = list.next()).done) {
+    while (!(current = iterList.next()).done) {
       const { value } = current
 
       if (isPromise(value))
         return value
-          .then((response) => {
+          .then((response: any) => {
             result.push(response)
 
             return result.length === count ? result : recursive()
           })
-          .catch((error) => Promise.reject(error))
+          .catch((error: any) => Promise.reject(error))
       result.push(value)
 
       if (result.length === count) return result

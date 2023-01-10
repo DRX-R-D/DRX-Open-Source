@@ -8,7 +8,7 @@ import { reduce, isArray } from './index.ts'
 
 const flat = <T = any>(list: T, depth: number = Infinity) =>
   reduce(
-    (prev, cur) => {
+    (prev: any, cur: any) => {
       if (depth === 0) return [...prev, cur]
 
       return isArray(cur)

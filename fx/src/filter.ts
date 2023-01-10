@@ -6,8 +6,8 @@ import { curry, flow, take, toIterator } from './index.ts'
  * @name filter
  * */
 
-const filter = curry(<T = any>(fn: () => boolean, list: T) => {
-  const filterIterator = function* (list: T) {
+const filter = curry((fn: () => boolean, list: any[]) => {
+  const filterIterator: any = function* (list: any) {
     for (const item of toIterator(list)) {
       const check = flow(item, fn)
 

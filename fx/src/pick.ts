@@ -6,9 +6,9 @@ import { reduce, curry } from './index.ts'
  * @name pick
  * */
 
-const pick = curry(<T = any>(keys: (string | number)[], data: T) =>
+const pick = curry((keys: (string | number)[], data: { [key: string | number]: any }) =>
   reduce(
-    (prev, cur) => ({
+    (prev: any, cur: any) => ({
       ...prev,
       ...(data[cur] && { [cur]: data[cur] }),
     }),

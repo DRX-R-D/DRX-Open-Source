@@ -8,7 +8,7 @@ import { curry } from './index.ts'
  * */
 
 const sort = curry((fn: (prev: unknown, cur: unknown) => number, list) => {
-  const merge = (first, second) => {
+  const merge = (first: any, second: any) => {
     const result = []
 
     while (first.length && second.length) {
@@ -20,7 +20,7 @@ const sort = curry((fn: (prev: unknown, cur: unknown) => number, list) => {
 
     return result
   }
-  const recursive = (list) => {
+  const recursive = (list: any[]): any => {
     if (list.length < 2) return list
 
     const harp = Math.floor(list.length / 2)

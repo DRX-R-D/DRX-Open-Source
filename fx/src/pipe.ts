@@ -6,9 +6,8 @@ import { reduce, sync } from './index.ts'
  * @name pipe
  * */
 
-const pipe =
-  <T = any>(fn, ...fns) =>
-    (...args): T =>
+const pipe = (fn: any, ...fns: any[]) =>
+    (...args: any[]): any =>
       reduce(sync, fn(...args), fns)
 
 export default pipe

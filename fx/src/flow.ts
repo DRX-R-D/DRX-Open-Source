@@ -7,7 +7,7 @@ import { isPromise } from './index.ts'
  * @name flow
  * */
 
-const flow = (...args) => {
+const flow = <T = any>(...args: [any, any] | [any, any, any]): T | Promise<T> => {
   if (args.length === 2) return flow(null, ...args)
 
   const [arg, value, fn] = args

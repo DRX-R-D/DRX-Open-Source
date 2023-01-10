@@ -6,7 +6,7 @@ import { empty } from './index.ts'
  * @name toIterator
  * */
 
-const toIterator = <V = any>(list: any): Iterable<V> =>
+const toIterator = (list: any[]): any =>
   (list && list[Symbol.iterator]?.()) || empty()
 
 export default toIterator

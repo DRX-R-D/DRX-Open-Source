@@ -7,7 +7,7 @@ import { take } from './index.ts'
  * */
 
 const entries = <T = any>(value: T) => {
-  const entriesIterator = function* (list: T) {
+  const entriesIterator: any = function* (list: T) {
     for (const item in list) yield [item, list[item]]
   }
 
