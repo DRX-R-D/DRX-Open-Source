@@ -1,4 +1,4 @@
-import { build, emptyDir } from '../deps.ts'
+import { build, emptyDir } from '../../deps.ts'
 
 await emptyDir('./npm')
 await build({
@@ -8,13 +8,15 @@ await build({
     deno: true,
   },
   package: {
-    name: '@drx/fx',
+    name: '@bnpgg/fx',
     version: Deno.args[0],
     description: '',
+    author: 'freevuehub',
+    private: false,
     license: 'MIT',
     repository: {
       type: 'git',
-      url: 'https://github.com/DRX-R-D/DRX-Open-Source/tree/master/fx',
+      url: 'git+https://github.com/DRX-R-D/DRX-Open-Source.git',
     },
   },
 })
