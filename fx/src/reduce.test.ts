@@ -1,4 +1,4 @@
-import { assertEquals } from '../../deps.ts'
+import { assertEquals } from 'https://deno.land/std@0.171.0/testing/asserts.ts'
 import { reduce } from './index.ts'
 
 Deno.test('"reduce"', () => {

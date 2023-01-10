@@ -4,8 +4,11 @@ await emptyDir('./npm')
 await build({
   entryPoints: ['./mod.ts'],
   outDir: './npm',
+  packageManager: 'yarn',
   shims: {
-    deno: true,
+    deno: {
+      test: 'dev',
+    },
   },
   package: {
     name: '@bnpgg/fx',
